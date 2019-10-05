@@ -1,1 +1,9 @@
-<p>auth works!</p>
+<form class="text-center" [formGroup]= "authForm" (ngSubmit)= "login()">
+    <label class="col-md-2">UserName</label>&nbsp;
+    <input type="text" formControlName = "username" /><br>
+
+    <label class="col-md-2">Password</label>&nbsp;
+    <input type="password" formControlName = "password" > <br>
+
+    <button type="submit" class="btn btn-primary col-4">Login</button>
+</form>

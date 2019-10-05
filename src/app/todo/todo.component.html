@@ -1,1 +1,16 @@
-<p>todo works!</p>
+
+<app-add-to-do (AddToDo)= "AddToDo($event)">
+
+</app-add-to-do>
+
+
+<tr class="d-flex">
+        <th class="col-md-6">Item</th>            
+        <th class="col-md-2">Completed? </th>
+        <th class="col-md-4">Action!</th>
+    </tr>
+
+    <app-todo-item *ngFor = "let todo of todos" [todo] = "todo" (delToDo)= "delToDo($event)" (updateToDo)= "updateToDo($event)">
+
+
+    </app-todo-item>

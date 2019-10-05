@@ -1,0 +1,16 @@
+<!-- <div>
+   <div class="">
+    <label for="{{ todo.id }}">
+        {{ todo.item }}
+    </label>&nbsp;&nbsp;
+    <button (click)="onDelete(todo)" type="button" class="btn btn-danger">X</button>
+</div>
+</div> -->
+
+        <br/>
+        <tr class="d-flex">
+            <td class="col-md-6">{{ todo.item }}</td>            
+            <td class="col-md-2">{{ todo.status }} </td>
+            <td class="col-md-4"><button (click)="onUpdate(todo)" type="button" class="btn btn-primary">Update</button>&nbsp;<button (click)="onDelete(todo)" type="button" class="btn btn-danger">Delete</button></td>
+        </tr>
+
