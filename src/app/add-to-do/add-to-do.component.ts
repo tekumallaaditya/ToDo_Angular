@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {ToDoModel} from '../models/todomodel';
+import { CookieService } from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-to-do',
@@ -11,7 +13,7 @@ export class AddToDoComponent implements OnInit {
 
   @Output() AddToDo: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private cookieService:CookieService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,6 +27,12 @@ export class AddToDoComponent implements OnInit {
     this.AddToDo.emit(todo);
 
     console.log('it works')
+  }
+
+  Logout(){
+    this.cookieService.delete('user-token');
+    this.router.navigate(['/auth']);
+    console.log('inside the logout method');
   }
 
 }

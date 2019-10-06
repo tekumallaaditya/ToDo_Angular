@@ -7,7 +7,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 
 export class ApiService {
-  LoginURL = 'http://localhost:8000/login/'
+  LoginURL = 'http://localhost:8000/login/';
+  registerURL = 'http://localhost:8000/userViewSet/';
   baseURL = 'http://localhost:8000/todofeed/';
  /*  headers = new HttpHeaders({
     Authorization: `Token ${this.token}`
@@ -45,6 +46,14 @@ export class ApiService {
       'password': user.password
     }
     return this.http.post(this.LoginURL, body);
+  }
+
+  userRegister(user){
+    const body = {
+      'username': user.username,
+      'password': user.password
+    }
+    return this.http.post(this.registerURL, body);
   }
 
   getAuthHeaders() {

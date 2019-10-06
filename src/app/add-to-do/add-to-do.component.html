@@ -1,4 +1,10 @@
-<form class="form" (ngSubmit)="onSubmit()">
-    <input class="col-md-8" type="text" name="item" [(ngModel)]="item" placeholder="Add Todo...">&nbsp;
-    <input type="submit" value="Submit" class="btn btn-primary">
-</form>
+<div class="container-fluid row">
+    <form class="form" (ngSubmit)="onSubmit()" class="col-10">
+        <input class="col-8" type="text" name="item" [(ngModel)]="item" placeholder="Add Todo...">&nbsp;
+        <input type="submit" value="Submit" class="btn btn-primary">&nbsp;        
+    </form>
+    <button class="btn btn-danger" (click)= "Logout()">Logout</button>
+</div>
+
+
+
